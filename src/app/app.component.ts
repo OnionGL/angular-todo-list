@@ -9,14 +9,15 @@ import { Todo } from './Todo';
 export class AppComponent {
   todos: Todo[] = [];
   newTodo: string;
-  saveTodo() {
-    if (this.newTodo) {
+  saveTodo(event: any) {
+    console.log('r')
+    if (this.newTodo && event.code === 'Enter' || event.target.id === 'button-addon2') {
       let todo = new Todo();
       todo.name = this.newTodo;
       todo.isCompleted = true;
       this.todos.push(todo);
       this.newTodo = '';
-    } else {
+    } else if (event.code !== 'Enter' && event.code === 'Enter') {
       alert('Please Enter Todo');
     }
   }
