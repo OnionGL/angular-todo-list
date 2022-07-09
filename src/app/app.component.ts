@@ -10,7 +10,6 @@ export class AppComponent {
   todos: Todo[] = [];
   newTodo: string;
   saveTodo(event: any) {
-    console.log('r')
     if (this.newTodo && event.code === 'Enter' || event.target.id === 'button-addon2') {
       let todo = new Todo();
       todo.name = this.newTodo;
